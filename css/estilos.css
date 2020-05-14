@@ -1,27 +1,27 @@
+/* soft reset do css */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    /*background-image: url('../img/fundo.jpg');*/
-    background-color: indigo;
-    background-size: auto 100vh;
-    font-family: Arial;
-    height: 100vh;
-    font-size: 12px;
-  }
-  
- /* se a tela tiver pelo menos 400px vai carregar estes estilos */ 
+  background-color: indigo;
+  background-size: auto 100vh; 
+  font-family: 'Source Code Pro', monospace;
+  height: 100vh;
+  font-size: 12px;
+}
+
+/* se a tela tiver pelo menos 400px vai carregar estes estilos */
 @media (min-width: 400px) {
   body {
-    background-color: olivedrab
+    background-color: olivedrab;
     font-size: 14px;
   }
 }
 
-/*media também chamado de breakpoint */
+/* breakpoint */
 @media (min-width: 600px) {
   body {
     background-color: royalblue;
@@ -29,12 +29,11 @@ body {
   }
 }
 
-/*media também chamado de breakpoint */
+/* breakpoint */
 @media (min-width: 1200px) {
   body {
-    font-size: 20px;
-    background-image: none;
     background-color: darkslategrey;
+    font-size: 20px;
   }
 }
 
@@ -45,51 +44,93 @@ header {
   align-items: center;
 }
 
-  .menu {
-    background-color: white;
-    position: fixed;
-    width: 100vw;
-    top: 0;
-  }
-  
-  .menu ul {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .menu li {
-    list-style: none;  
-  }
-  
-  .menu a {
-    display: block;
-    padding: 10px 20px;
-  }
+.menu {
+  background-color: white;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+}
 
-  a {
-    color: teal;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  .site-subtitle,
-  .site-title {
-    color: whitesmoke;
-    text-align: center;
-  }
+.menu ul {
+  display: flex;
+  justify-content: space-around;
+}
 
-  .site-title {
-    font-size: 4em;
-  }
-  
-  .site-subtitle {
-    font-style: italic;
-  }
+.menu li {
+ list-style: none; 
+}
 
-  .img-portfolio {
-    height: 180px;
-    width: 180px;
+.menu a {
+  
+  display: block;
+  padding: 10px 20px;
+}
+
+a {
+  color: teal;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.site-subtitle, 
+.site-title {
+  color: whitesmoke;
+  text-align: center;
+}
+
+.site-title {
+  font-size: 4em;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.site-subtitle {
+ font-style: italic;
+ font-family: 'Press Start 2P', cursive;
+ line-height: 1.8em;
+}
+
+.portfolio {
+  padding: 2em;
+  height: 100vh;
+}
+
+.portfolio h2 {
+  font-family: 'Press Start 2P', cursive;
+  color: whitesmoke;
+  margin-bottom: 1.5em;
+  font-size: 2em;
+}
+
+.portfolio .grid {
+  display: grid;
+  gap: 2em;
+}
+
+@media (min-width: 560px) {
+  .portfolio .grid {
+    grid-template-columns: 240px 240px;
   }
+}
+
+@media (min-width: 880px) {
+  .portfolio .grid {
+    grid-template-columns: repeat(3, 260px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 8em - 48px);
+  }
+}
+
+.portfolio figure {
+  text-align: center;
+}
+
+.img-portfolio {
+  height: 180px;
+  width: 240px;
+  object-fit: cover;
+  object-position: left bottom;
+}
